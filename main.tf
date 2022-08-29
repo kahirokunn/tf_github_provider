@@ -14,6 +14,10 @@ resource "github_repository" "foo" {
   auto_init = true
 }
 
+output "name" {
+  value = github_repository.foo.name
+}
+
 resource "github_repository_file" "foo" {
   repository          = github_repository.foo.name
   branch              = "main"
